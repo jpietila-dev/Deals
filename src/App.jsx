@@ -83,8 +83,13 @@ export default function App() {
     setParsing(true);
     try {
       const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+  method: "POST",
+  headers: { 
+    "Content-Type": "application/json",
+    "x-api-key": "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",
+    "anthropic-version": "2023-06-01",
+    "anthropic-dangerous-direct-browser-access": "true"
+  },
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
